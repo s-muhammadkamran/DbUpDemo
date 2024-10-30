@@ -14,9 +14,15 @@ var result = upgrader.PerformUpgrade();
 
 if (result.Successful)
 {
-    Console.WriteLine("Success! YAY..");
+    Console.ForegroundColor = ConsoleColor.Green;
+    Console.WriteLine("Successfully Deployed!");
 }
 else
 {
+    Console.ForegroundColor = ConsoleColor.Red;
+    Console.WriteLine(result.Error);
     Console.WriteLine("Failure");
 }
+
+Console.ResetColor();
+Console.ReadLine();
